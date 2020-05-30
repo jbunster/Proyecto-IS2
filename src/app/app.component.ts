@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pagina-IS2-nueva';
+  displayLink=true;
+  onClick(){
+    this.displayLink=false;
+  }
 }
