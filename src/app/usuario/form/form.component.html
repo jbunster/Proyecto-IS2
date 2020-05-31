@@ -1,0 +1,19 @@
+<app-barra></app-barra>
+<br/>
+<div>
+    <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit()" >
+       <input type="text" class="fortextbox" name="rut" placeholder="rut" 
+          formControlName="rut_cliente">
+       <br/>
+       <input type="text" class="fortextbox" name="nombre_cliente" 
+          placeholder="nombre del cliente" formControlName="nombre_cliente">
+       <br/>
+       <input type="text" class="fortextbox" name="numero_telefono" placeholder="numero de contacto" 
+          formControlName="numero_contacto">
+       <br/>
+       <input type="submit" [disabled] ="!formdata.valid" class="forsubmit" value="Log In">
+    </form>
+ </div>
+ <p>
+    Rut ingresado es : {{rut}}
+ </p>

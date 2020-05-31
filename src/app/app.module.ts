@@ -17,6 +17,7 @@ import { TablaAdminComponent } from './administrador/tabla-admin/tabla-admin.com
 import { FormComponent } from './usuario/form/form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { LoginComponent } from './secciones/login/login.component';
 @NgModule({
@@ -43,6 +44,7 @@ import { LoginComponent } from './secciones/login/login.component';
     MatCardModule,
     MatFormFieldModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

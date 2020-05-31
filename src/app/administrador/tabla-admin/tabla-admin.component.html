@@ -1,0 +1,7 @@
+<app-barra-admin></app-barra-admin>
+<table mat-table [dataSource]='queue' align="center">
+    <mat-text-column name="nombre"></mat-text-column>
+    <mat-text-column name="rut"></mat-text-column>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>    
+</table>
