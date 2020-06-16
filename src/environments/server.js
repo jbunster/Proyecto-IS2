@@ -23,22 +23,26 @@ const client = new Client({
     console.log(res);
     client.end();
   })*/
-
-app.get('/prueba',(req,res)=>{
-    const select_query='SELECT COUNT(id_tienda) as cantidad FROM fila where id_tienda=1';
-    client.query(select_query,(err,result)=>{
+/**************************Consulta para obtener el número de clientes en la fila de una tienda*******************************/
+app.get('/prueba/:id',(req,res)=>{
+    console.log("hola");
+    var id= req.params.id;
+    const select_query=`SELECT COUNT(id_tienda) as cantidad FROM fila where id_tienda=$1`;
+    client.query(select_query,[id],(err,result)=>{
         if(err){
-            return res.send(err)
+            console.log(err)
         }else{
             console.log(select_query);
-            //console.log(result);
+            console.log(result);
             return res.json({
                 data: result
             })
         }
     });
 });
+
 app.post('/prueba2', bodyParser.json(),(req,res)=>{
+    rut_cliente=req.body.rut_cliente;
     const select_query=`INSERT INTO cliente (rut_cliente,nombre_cliente,numero_contacto) VALUES('${req.body.rut_cliente}','${req.body.nombre_cliente}','${req.body.numero_contacto}') ON CONFLICT DO NOTHING`;
     client.query(select_query,(err,result)=>{
         if(err){
@@ -50,10 +54,35 @@ app.post('/prueba2', bodyParser.json(),(req,res)=>{
                 if(err2){
                     console.log(err2);
                 }else{
-                    res.json(res.body);
+                    const select_query3=`SELECT rut_cliente FROM cliente WHERE rut_cliente=$1`
+                    client.query(select_query3,[rut_cliente],(err,result3)=>{
+                        if(err){
+                            
+                        }else{
+                            console.log("Estoy acá")
+                            console.log(result3);
+                            return res.json({
+                                data: result3
+                            })
+                        }
+                    })
                 }
             });
-            res.json(res.body);
+        }
+    });
+});
+app.get('/cliente/:id',(req,res)=>{
+    var rut_cliente= req.params.id;
+    const select_query=`SELECT rut_cliente,puesto_fila FROM fila where rut_cliente=$1`;
+    client.query(select_query,[rut_cliente],(err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            console.log(select_query);
+            console.log(result);
+            return res.json({
+                data: result
+            })
         }
     });
 });

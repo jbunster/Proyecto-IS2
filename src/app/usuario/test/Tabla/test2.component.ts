@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { HttpClient ,HttpParams ,HttpHeaders} from '@angular/common/http';
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-test2',
   templateUrl: './test2.component.html',
@@ -8,11 +9,13 @@ import { HttpClient ,HttpParams ,HttpHeaders} from '@angular/common/http';
 export class Test2Component implements OnInit {
   ejemplo:any;
   columnsToDisplay=['id','nombre'];
-  constructor(private http:HttpClient) { 
+  id:any;
+  constructor(private http:HttpClient,private route: ActivatedRoute) { 
   }
   async ngOnInit() {
+    this.id =parseInt(this.route.snapshot.paramMap.get('id'));
+    console.log(this.id);
     this.ejemplo = await
-    this.http.get('http://localhost:8000/prueba').toPromise();
-    console.log(this.ejemplo.data.rows);
+    this.http.get('http://localhost:8000/prueba/'+this.id).toPromise();
   }
 }

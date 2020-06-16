@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { HttpClient ,HttpParams ,HttpHeaders} from '@angular/common/http';
+import { Router,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,7 +10,7 @@ import { HttpClient ,HttpParams ,HttpHeaders} from '@angular/common/http';
 export class FormComponent implements OnInit {
   formdata;
   rut;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.formdata=new FormGroup({
@@ -36,8 +37,7 @@ export class FormComponent implements OnInit {
   async onClickSubmit(){
     this.http.post('http://localhost:8000/prueba2',this.formdata.value,{  headers: new HttpHeaders({ 'Content-Type': 'application/json'})}).subscribe(
       (response ) =>{
-        console.log(response);
-        location.reload();
+        this.router.navigate(['/app-resultado/'+response.data.rows[0].rut_cliente]);
       }
     )
   }

@@ -1,6 +1,22 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+    .w3-grad {background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgb(38, 107, 148));}
+</style>
 <mat-toolbar class="hola">
-    <button mat-button>Home</button>
-    <button mat-button>PlaceHolder</button>
+    <button mat-button routerLink="/app-usuario">Home</button>
     <a  routerLink="/app-test"><button mat-button> Filas</button></a>
-    <a  routerLink="/app-test2"><button mat-button> Tiendas disponibles</button></a>
 </mat-toolbar>
+
+<header class="w3-container w3-grad w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo"><strong>Fila de atención virtual</strong></h1>
+    <p class="w3-xlarge">Esta página web le permitirá ahorrarse filas eternas y evitar focos de contagio.<br />
+      Con esta fila de atención virtual usted podrá sacar número para distintos locales y servicios,<br /> así podrá acercarse al lugar cuando sea su turno, evitando aglomeraciones de personas.</p>
+    <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top"routerLink="/app-usuario">Número de atención</button>
+  </header>
+  

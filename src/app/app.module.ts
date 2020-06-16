@@ -8,7 +8,7 @@ import {MatToolbarModule} from '@angular/material';
 import { BarraComponent } from './usuario/barra/barra.component';
 import {MatTableModule} from '@angular/material/table';
 import { TestComponent } from './usuario/test/test.component';
-import { Test2Component } from './usuario/Tabla/test2.component';
+import { Test2Component } from './usuario/test/Tabla/test2.component';
 import {MatCardModule} from '@angular/material/card';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { AdministradorComponent } from './administrador/administrador.component';
@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { LoginComponent } from './secciones/login/login.component';
+import { ResultadoComponent } from './usuario/form/resultado/resultado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { LoginComponent } from './secciones/login/login.component';
     FormComponent,
     SeccionesComponent,
     LoginComponent,
+    ResultadoComponent,
   ],
   imports: [
     BrowserModule,
