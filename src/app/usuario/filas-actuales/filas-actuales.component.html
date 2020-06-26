@@ -1,0 +1,7 @@
+<app-barra></app-barra>
+<br/>
+<div *ngFor="let item of filas.data.rows">
+    <p>Ha ingresado a la fila del servicio:{{item.nombre_tienda}} </p>
+    <p>Su puesto en la fila es el número:{{item.puesto_fila}}</p>
+</div>
+<p *ngIf="mostrarError">Usted no se encuentra en ninguna fila en este momento</p>

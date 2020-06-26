@@ -4,3 +4,4 @@
     <p>Ha ingresado a la fila con el rut:{{item.rut_cliente}} </p>
     <p>Su puesto en la fila es el número:{{item.puesto_fila}}</p>
 </div>
+<p *ngIf="esconderError">Error al ingresar a la fila, es posible que la tienda se encuentre cerrada</p>

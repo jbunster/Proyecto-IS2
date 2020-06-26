@@ -20,7 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { LoginComponent } from './secciones/login/login.component';
+import {LoginClienteComponent} from './usuario/login-cliente/login-cliente.component';
 import { ResultadoComponent } from './usuario/form/resultado/resultado.component';
+import { DatePipe } from '@angular/common';
+import { FilasActualesComponent } from './usuario/filas-actuales/filas-actuales.component';
+import { RegistroComponent } from './usuario/login-cliente/registro/registro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +39,9 @@ import { ResultadoComponent } from './usuario/form/resultado/resultado.component
     SeccionesComponent,
     LoginComponent,
     ResultadoComponent,
+    LoginClienteComponent,
+    FilasActualesComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,7 @@ import { ResultadoComponent } from './usuario/form/resultado/resultado.component
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

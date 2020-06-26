@@ -9,8 +9,9 @@
     .w3-grad {background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgb(38, 107, 148));}
 </style>
 <mat-toolbar class="hola">
-    <button mat-button routerLink="/app-usuario">Home</button>
-    <a  routerLink="/app-test"><button mat-button> Filas</button></a>
+    <button mat-button (click)="onClick(3)">Home</button>
+    <button mat-button (click)="onClick(1)"> Tiendas</button>
+    <button mat-button (click)="onClick(2)"> Filas Actuales</button>
 </mat-toolbar>
 
 <header class="w3-container w3-grad w3-center" style="padding:128px 16px">
